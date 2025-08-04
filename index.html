@@ -5,9 +5,62 @@
   <title>My Bitcoin Wallet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; text-align: center; }
-    h1 { margin-bottom: 10px; }
-    p { color: #666; }
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      color: #666;
+    }
+
+    /* زر الثلاث شحطات */
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* القائمة المنسدلة */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #000;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+      z-index: 100;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 0;
+    }
+
+    .dropdown a:hover {
+      text-decoration: underline;
+    }
+
+    /* روابط أسفل الصفحة */
+    .links {
+      margin-top: 60px;
+    }
+
     .links a {
       display: inline-block;
       margin: 10px;
@@ -17,17 +70,36 @@
       color: #fff;
       border-radius: 5px;
     }
-    .links a:hover { background: #444; }
+
+    .links a:hover {
+      background: #444;
+    }
   </style>
 </head>
 <body>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <div class="dropdown" id="dropdownMenu">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
   <h1>My Bitcoin Wallet</h1>
   <p>Secure. Private.</p>
 
+  <!-- روابط أسفل الصفحة -->
   <div class="links">
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Service</a>
     <a href="contact.html">Contact</a>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
