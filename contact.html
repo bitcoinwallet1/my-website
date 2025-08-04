@@ -8,55 +8,78 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background-color: orange;
-      color: #fff;
+      background-color: #fff;
+      color: #000;
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 20px 120px; /* مساحة للشريطين بالأسفل */
     }
+
     h1 {
       font-size: 2.5em;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 40px;
+
+    table {
+      margin: 0 auto 40px auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 600px;
     }
-    .contact-info {
-      background-color: #000;
-      color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      display: inline-block;
+
+    td {
+      padding: 15px;
+      border-bottom: 1px solid #ccc;
       text-align: left;
+      font-size: 16px;
     }
-    .contact-info p {
-      margin: 10px 0;
+
+    td strong {
+      display: inline-block;
+      width: 100px;
     }
+
     a {
-      color: #ffd700;
+      color: #007bff;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    /* الشريط البرتقالي */
+    .orange-bar {
+      background-color: orange;
+      height: 60px;
+      width: 100%;
+      position: fixed;
+      bottom: 50px;
+      left: 0;
+      z-index: 10;
+    }
+
+    /* شريط الروابط الأسود */
     .bottom-nav {
+      background-color: #000;
+      color: white;
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #000;
-      color: white;
       display: flex;
       justify-content: center;
       gap: 30px;
       padding: 12px 0;
       font-size: 15px;
+      z-index: 20;
     }
+
     .bottom-nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
     .bottom-nav a:hover {
       text-decoration: underline;
     }
@@ -65,16 +88,26 @@
 <body>
 
   <h1>Contact Us</h1>
-  <p>We’d love to hear from you. Reach out using the information below.</p>
 
-  <div class="contact-info">
-    <p><strong>Email:</strong> <a href="mailto:support@orphis.org">support@orphis.org</a></p>
-    <p><strong>Website:</strong> <a href="https://orphis.org">orphis.org</a></p>
-    <p><strong>Company:</strong> TNC TECHNOLOGIES PRIVATE LIMITED</p>
-    <p><strong>Address:</strong> 16 Temple Road, Mehta Street Chowk Safanwala, Lahore, Punjab, Pakistan</p>
-  </div>
+  <table>
+    <tr>
+      <td><strong>Email:</strong> <a href="mailto:support@orphis.org">support@orphis.org</a></td>
+    </tr>
+    <tr>
+      <td><strong>Website:</strong> <a href="https://orphis.org">orphis.org</a></td>
+    </tr>
+    <tr>
+      <td><strong>Company:</strong> TNC TECHNOLOGIES PRIVATE LIMITED</td>
+    </tr>
+    <tr>
+      <td><strong>Address:</strong> 16 Temple Road, Mehta Street Chowk Safanwala, Lahore, Punjab, Pakistan</td>
+    </tr>
+  </table>
 
-  <!-- روابط تنقل أسفل الصفحة -->
+  <!-- الشريط البرتقالي -->
+  <div class="orange-bar"></div>
+
+  <!-- شريط الروابط الأسود -->
   <div class="bottom-nav">
     <a href="index.html">Home</a>
     <a href="privacy.html">Privacy Policy</a>
