@@ -7,53 +7,60 @@
   <style>
     body {
       font-family: sans-serif;
-      max-width: 800px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 30px auto 100px auto; /* هامش سفلي كبير لشريط الروابط */
       padding: 20px;
       line-height: 1.8;
       position: relative;
-      padding-bottom: 100px; /* مساحة لشريط الروابط */
+      text-align: left;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #333;
     }
 
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-    }
-
-    .logo-container img {
-      width: 80px;
+    /* لوجو البتكوين */
+    .btc-logo {
+      display: block;
+      margin: 10px auto 40px auto;
+      width: 100px;
       height: auto;
       cursor: pointer;
     }
 
+    /* الشريط البرتقالي العريض */
     .orange-bar {
       width: 100%;
-      height: 45px; /* 3 أضعاف الـ 15 */
+      height: 120px; /* ارتفاع عريض مثل صفحة privacy */
       background-color: orange;
-      border-radius: 10px;
-      margin-bottom: 0;
+      margin-top: 40px;
+      border-radius: 4px;
     }
 
+    /* شريط روابط التنقل ثابت اسفل الشاشة */
     .footer-nav {
       position: fixed;
       bottom: 0;
+      left: 0;
       width: 100%;
       background: #000;
+      color: white;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       padding: 12px 0;
-      z-index: 10;
+      gap: 30px;
+      font-size: 15px;
+      z-index: 1000;
     }
 
     .footer-nav a {
+      color: white;
       text-decoration: none;
-      color: #fff;
       font-weight: bold;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
     }
 
     p {
@@ -63,9 +70,10 @@
 </head>
 <body>
 
-  <div class="logo-container">
-    <a href="index.html"><img src="logo.png" alt="Bitcoin Logo"></a>
-  </div>
+  <!-- لوجو بتكوين -->
+  <a href="index.html">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" class="btc-logo" />
+  </a>
 
   <h1>Terms and Conditions</h1>
   <p>Welcome to Orphis: Simple & Powerful Bitcoin Wallet!</p>
@@ -157,9 +165,10 @@
   </ul>
   <p>If the Website is provided free of charge, we are not liable for any damage or loss of any nature.</p>
 
-  <!-- الشريط البرتقالي العريض فوق الروابط -->
+  <!-- الشريط البرتقالي العريض تحت المحتوى -->
   <div class="orange-bar"></div>
 
+  <!-- شريط روابط التنقل الثابت اسفل الشاشة -->
   <div class="footer-nav">
     <a href="index.html">Home</a>
     <a href="privacy.html">Privacy Policy</a>
