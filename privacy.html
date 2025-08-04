@@ -5,8 +5,48 @@
   <title>Privacy Policy - My Bitcoin Wallet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6; }
+    body { 
+      font-family: sans-serif; 
+      max-width: 800px; 
+      margin: auto; 
+      padding: 20px; 
+      line-height: 1.6; 
+      position: relative; 
+    }
     h1, h2 { color: #333; }
+
+    /* شريط الروابط السفلي */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 0;
+      z-index: 999;
+    }
+
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    .bottom-nav a:hover {
+      background-color: #333;
+    }
+
+    /* حتى ما يغطي المحتوى */
+    body::after {
+      content: '';
+      display: block;
+      height: 60px;
+    }
   </style>
 </head>
 <body>
@@ -83,5 +123,13 @@
   <ul>
     <li>By email: support@orphis.org</li>
   </ul>
+
+  <!-- روابط سفلية -->
+  <div class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
 </body>
 </html>
