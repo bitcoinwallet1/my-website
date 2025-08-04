@@ -8,7 +8,7 @@
     body {
       font-family: sans-serif;
       max-width: 1000px;
-      margin: 30px auto 120px auto; /* هامش سفلي كافي */
+      margin: 30px auto 100px auto; /* هامش سفلي كافي */
       padding: 20px;
       line-height: 1.6;
       position: relative;
@@ -24,17 +24,15 @@
       height: auto;
       cursor: pointer;
     }
-    /* الشريط البرتقالي فوق الروابط */
+    /* الشريط البرتقالي تحت المحتوى */
     .orange-bar {
-      position: fixed;
-      bottom: 44px; /* فوق الروابط */
-      left: 0;
       width: 100%;
       height: 44px;
       background-color: orange;
-      z-index: 1001;
+      margin-top: 40px;
+      border-radius: 4px;
     }
-    /* روابط التنقل تحت الشريط */
+    /* روابط التنقل ثابتة أسفل الشاشة */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -138,7 +136,7 @@
     <li>By email: support@orphis.org</li>
   </ul>
 
-  <!-- الشريط البرتقالي -->
+  <!-- الشريط البرتقالي تحت المحتوى -->
   <div class="orange-bar"></div>
 
   <!-- روابط التنقل السفلي -->
