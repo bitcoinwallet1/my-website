@@ -8,7 +8,7 @@
     body {
       font-family: sans-serif;
       max-width: 1000px;
-      margin: 30px auto 60px auto;
+      margin: 30px auto 100px auto; /* زدت الهامش السفلي عشان الشريط */
       padding: 20px;
       line-height: 1.6;
       position: relative;
@@ -19,26 +19,29 @@
     }
     .btc-logo {
       display: block;
-      margin: 20px auto 30px auto;
+      margin: 10px auto 40px auto; /* رفعت الشعار وفصلته */
       width: 100px;
       height: auto;
+      cursor: pointer;
     }
     .bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #000;
+      background: orange; /* اللون البرتقالي */
       color: white;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
-      gap: 20px;
-      font-size: 14px;
+      padding: 12px 0;
+      gap: 30px;
+      font-size: 15px;
+      z-index: 1000;
     }
     .bottom-nav a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
     .bottom-nav a:hover {
       text-decoration: underline;
@@ -47,8 +50,8 @@
 </head>
 <body>
 
-  <!-- شعار البتكوين -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" class="btc-logo">
+  <!-- شعار البتكوين مع رابط (مؤقت) -->
+  <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" class="btc-logo"></a>
 
   <h1>Privacy Policy</h1>
   <p><strong>Last updated:</strong> February 15, 2025</p>
