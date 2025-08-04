@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>My Bitcoin Wallet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       font-family: sans-serif;
@@ -74,6 +74,27 @@
     .links a:hover {
       background: #444;
     }
+
+    /* صورة البيتكوين */
+    .bitcoin-image {
+      width: 150px;
+      height: 150px;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    /* زر شعار أب ستور فقط */
+    .appstore-button {
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+    .appstore-logo {
+      width: 120px;
+      height: auto;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +105,28 @@
     <a href="terms.html">Terms of Service</a>
     <a href="contact.html">Contact</a>
   </div>
+
+  <!-- صورة عملة بيتكوين في أعلى الصفحة -->
+  <img
+    class="bitcoin-image"
+    src="https://cdn.pixabay.com/photo/2014/04/02/10/00/bitcoin-304112_1280.png"
+    alt="Bitcoin"
+  />
+
+  <!-- زر شعار أب ستور فقط -->
+  <a
+    class="appstore-button"
+    href="https://apps.apple.com/us/app/bitcoin-wallet-orphis/id6742160127"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      class="appstore-logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_(iOS).svg"
+      alt="App Store"
+      title="Download on the App Store"
+    />
+  </a>
 
   <h1>My Bitcoin Wallet</h1>
   <p>Secure. Private.</p>
@@ -97,8 +140,8 @@
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
