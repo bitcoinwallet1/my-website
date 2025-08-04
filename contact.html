@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Contact Us - My Bitcoin Wallet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6; }
-    h1 { color: #333; }
-    a { color: blue; text-decoration: underline; }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: orange;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+    .contact-info {
+      background-color: #000;
+      color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      text-align: left;
+    }
+    .contact-info p {
+      margin: 10px 0;
+    }
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
+      font-size: 15px;
+    }
+    .bottom-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .bottom-nav a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+
   <h1>Contact Us</h1>
-  <p>If you have any questions, feel free to contact us.</p>
-  <p>Email: <a href="mailto:support@mybitcoinwallet.com">support@mybitcoinwallet.com</a></p>
-  <p>Or visit our <a href="https://github.com/bitcoinwallet1/my-website" target="_blank">GitHub project</a>.</p>
+  <p>We’d love to hear from you. Reach out using the information below.</p>
+
+  <div class="contact-info">
+    <p><strong>Email:</strong> <a href="mailto:support@orphis.org">support@orphis.org</a></p>
+    <p><strong>Website:</strong> <a href="https://orphis.org">orphis.org</a></p>
+    <p><strong>Company:</strong> TNC TECHNOLOGIES PRIVATE LIMITED</p>
+    <p><strong>Address:</strong> 16 Temple Road, Mehta Street Chowk Safanwala, Lahore, Punjab, Pakistan</p>
+  </div>
+
+  <!-- روابط تنقل أسفل الصفحة -->
+  <div class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
 </body>
 </html>
