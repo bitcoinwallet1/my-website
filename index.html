@@ -8,7 +8,7 @@
     body {
       font-family: sans-serif;
       max-width: 800px;
-      margin: 80px auto 130px auto; /* زيادة الهامش الأسفل عشان الشريطين */
+      margin: 80px auto 180px auto; /* زيادة الهامش الأسفل عشان الشريطين */
       padding: 20px;
       text-align: center;
       position: relative;
@@ -18,12 +18,12 @@
     /* الشريط البرتقالي الأسفل */
     .top-bar {
       position: fixed;
-      bottom: 40px; /* فوق الشريط الأسود */
+      bottom: 60px; /* فوق الشريط الأسود */
       left: 0;
       width: 100%;
-      height: 60px; /* ارتفاع مطابق لصفحة privacy */
-      background: linear-gradient(90deg, #ff8000 0%, #ff6600 100%);
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+      height: 120px; /* مطابق لصفحة privacy */
+      background-color: orange; /* لون برتقالي بسيط */
+      border-radius: 4px; /* نفس الانحناء */
       z-index: 1000;
     }
 
@@ -35,14 +35,18 @@
       width: 100%;
       background-color: #000;
       color: #fff;
-      z-index: 1000;
+      z-index: 1001; /* أعلى من الشريط البرتقالي */
       padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 15px;
+      border-top: 1px solid #333;
     }
     .bottom-bar a {
       color: #fff;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
     }
     .bottom-bar a:hover {
       text-decoration: underline;
