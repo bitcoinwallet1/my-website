@@ -1,39 +1,169 @@
-<!-- ... الكود السابق كما هو ... -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Bitcoin Wallet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 80px auto 150px auto; /* زيادة الهامش الأسفل عشان الشريطين */
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    /* الشريط البرتقالي تحت المحتوى - مطابق لصفحة الخصوصية */
+    .top-bar {
+      width: 100%;
+      height: 120px; /* نفس ارتفاع صفحة الخصوصية */
+      background-color: orange; /* لون برتقالي مطابق */
+      margin-top: 40px;
+      border-radius: 4px; /* نفس الانحناءات */
+      position: relative; /* مش ثابت، تحت المحتوى */
+      z-index: 0;
+    }
 
-  <div class="features-container-vertical">
-    <div class="feature-box">
-      <h3>Simple &amp; Smart</h3>
-      <p>A lightweight Bitcoin wallet that gets you started in seconds — no complexity, just clarity.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Effortless to Use</h3>
-      <p>Clean, intuitive design for beginners and experts alike. Everything where you need it.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Secure &amp; In Control</h3>
-      <p>Self-custodial and private — your assets stay safe, and you're always in charge.</p>
-    </div>
+    /* الشريط الأسود ثابت أسفل الشاشة */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      color: #fff;
+      z-index: 1000;
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 15px;
+    }
+    .bottom-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .bottom-bar a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+    p {
+      color: #666;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .menu-toggle {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1100;
+    }
+    .dropdown {
+      display: none;
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background: #000;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+      z-index: 1100;
+    }
+    .dropdown a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 0;
+    }
+    .dropdown a:hover {
+      text-decoration: underline;
+    }
+    .appstore-button {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .appstore-logo {
+      width: 120px;
+      height: auto;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      filter: grayscale(100%);
+      opacity: 0.6;
+    }
+    .appstore-logo:hover {
+      filter: none;
+      opacity: 1;
+    }
+    .below-logo-text {
+      font-size: 1.1em;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome Bitcoin Wallet</h1>
+  <p>Take full control of your Bitcoin and Lightning funds with our secure wallet, trusted worldwide.</p>
+
+  <div class="appstore-button" title="Download on the App Store">
+    <img
+      class="appstore-logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_(iOS).svg"
+      alt="App Store"
+    />
   </div>
 
-<!-- ... باقي الكود ... -->
+  <div class="below-logo-text">
+    Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
+  </div>
 
-<style>
-  /* ... باقي التنسيقات كما هي ... */
+  <!-- الشريط البرتقالي تحت المحتوى -->
+  <div class="top-bar"></div>
 
-  .features-container-vertical {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    gap: 20px;
-  }
+  <!-- روابط التنقل السفلي ثابتة -->
+  <div class="bottom-bar">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  .feature-box {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 8px;
-    box-sizing: border-box;
-    text-align: left;
-    box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  }
-</style>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="dropdown" id="dropdownMenu">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+    window.onclick = function(event) {
+      const menu = document.getElementById("dropdownMenu");
+      if (!event.target.matches('.menu-toggle')) {
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
