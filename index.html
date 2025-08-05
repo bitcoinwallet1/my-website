@@ -8,17 +8,17 @@
     body {
       font-family: sans-serif;
       max-width: 800px;
-      margin: 80px auto 80px auto; /* ترك مساحة للشريطين */
+      margin: 80px auto 130px auto; /* زيادة الهامش الأسفل عشان الشريطين */
       padding: 20px;
       text-align: center;
       position: relative;
       min-height: 100vh;
       box-sizing: border-box;
     }
-    /* الشريط البرتقالي الأعلى */
+    /* الشريط البرتقالي الأسفل */
     .top-bar {
       position: fixed;
-      top: 0;
+      bottom: 40px; /* فوق الشريط الأسود */
       left: 0;
       width: 100%;
       height: 50px;
@@ -92,7 +92,7 @@
     }
     .appstore-button {
       display: inline-block;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
     .appstore-logo {
       width: 120px;
@@ -100,12 +100,18 @@
       cursor: pointer;
       display: block;
       margin: 0 auto;
-      filter: grayscale(100%); /* لأن الرابط فاضي، نحول اللوغو لرمادي */
+      filter: grayscale(100%);
       opacity: 0.6;
     }
     .appstore-logo:hover {
       filter: none;
       opacity: 1;
+    }
+    .below-logo-text {
+      font-size: 1.1em;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
     }
   </style>
 </head>
@@ -131,6 +137,10 @@
     />
   </div>
 
+  <div class="below-logo-text">
+    Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
+  </div>
+
   <div class="bottom-bar">
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms and Conditions</a>
@@ -142,7 +152,6 @@
       const menu = document.getElementById("dropdownMenu");
       menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
-    // إغلاق القائمة عند النقر خارجها
     window.onclick = function(event) {
       const menu = document.getElementById("dropdownMenu");
       if (!event.target.matches('.menu-toggle')) {
