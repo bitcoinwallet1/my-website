@@ -8,22 +8,20 @@
     body {
       font-family: sans-serif;
       max-width: 800px;
-      margin: 80px auto 130px auto; /* زيادة الهامش الأسفل عشان الشريطين */
+      margin: 80px auto 130px auto; /* مساحة للروابط */
       padding: 20px;
       text-align: center;
       position: relative;
       min-height: 100vh;
       box-sizing: border-box;
     }
-    /* الشريط البرتقالي الأسفل */
+    /* الشريط البرتقالي عادي مع الصفحة */
     .top-bar {
-      position: fixed;
-      bottom: 40px; /* فوق الشريط الأسود */
-      left: 0;
       width: 100%;
-      height: 50px;
+      height: 60px;
       background-color: #ff6600; /* برتقالي */
-      z-index: 1000;
+      margin-top: 40px; /* مسافة من المحتوى */
+      border-radius: 5px;
     }
 
     /* الشريط الأسود الأسفل */
@@ -111,13 +109,11 @@
       font-size: 1.1em;
       color: #444;
       max-width: 600px;
-      margin: 0 auto 30px auto;
+      margin: 40px auto 30px auto; /* مسافة أكبر فوق النص */
     }
   </style>
 </head>
 <body>
-  <div class="top-bar"></div>
-
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
   <div class="dropdown" id="dropdownMenu">
@@ -140,6 +136,8 @@
   <div class="below-logo-text">
     Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
   </div>
+
+  <div class="top-bar"></div>
 
   <div class="bottom-bar">
     <a href="privacy.html">Privacy Policy</a>
