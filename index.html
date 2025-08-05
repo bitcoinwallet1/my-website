@@ -81,6 +81,33 @@
       display: block;
       margin: 0 auto;
     }
+
+    /* بانر الصورة مع النص */
+    .banner-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+    }
+    .banner-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      pointer-events: none;
+      user-select: none;
+    }
+
   </style>
 </head>
 <body>
@@ -90,6 +117,12 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms and Conditions</a>
     <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- بانر مع نص -->
+  <div class="banner-container">
+    <img src="banner.jpg" alt="Banner" />
+    <div class="banner-text">Welcome to My Bitcoin Wallet</div>
   </div>
 
   <img
