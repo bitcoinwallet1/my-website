@@ -8,89 +8,159 @@
     body {
       font-family: sans-serif;
       max-width: 800px;
-      margin: 30px auto 140px auto; /* مساحة من تحت عشان ما يغطي الشريط */
+      margin: 80px auto 130px auto; /* زيادة الهامش الأسفل عشان الشريطين */
       padding: 20px;
       text-align: center;
       position: relative;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
-
-    img {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-
-    .store-logo {
-      margin-top: 10px;
-      width: 180px;
-      height: auto;
-      cursor: pointer;
-    }
-
-    .description {
-      margin-top: 40px; /* زادت المسافة تحت اللوجو */
-      font-size: 18px;
-      color: #333;
-    }
-
-    /* الشريط البرتقالي */
-    .orange-bar {
+    /* الشريط البرتقالي الأسفل */
+    .top-bar {
+      position: fixed;
+      bottom: 40px; /* فوق الشريط الأسود */
+      left: 0;
       width: 100%;
-      height: 120px; /* نفس ارتفاع صفحة privacy */
-      background-color: orange;
-      margin-top: 40px;
-      border-radius: 4px;
+      height: 60px; /* ارتفاع مطابق لصفحة privacy */
+      background: linear-gradient(90deg, #ff8000 0%, #ff6600 100%);
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
     }
 
-    /* روابط التنقل الثابتة */
-    .bottom-nav {
+    /* الشريط الأسود الأسفل */
+    .bottom-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #000;
-      color: white;
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      gap: 30px;
-      font-size: 15px;
+      background-color: #000;
+      color: #fff;
       z-index: 1000;
+      padding: 10px 0;
     }
-
-    .bottom-nav a {
-      color: white;
+    .bottom-bar a {
+      color: #fff;
       text-decoration: none;
+      margin: 0 15px;
       font-weight: bold;
     }
-
-    .bottom-nav a:hover {
+    .bottom-bar a:hover {
       text-decoration: underline;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+    p {
+      color: #666;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .menu-toggle {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1100;
+    }
+    .dropdown {
+      display: none;
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background: #000;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+      z-index: 1100;
+    }
+    .dropdown a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 0;
+    }
+    .dropdown a:hover {
+      text-decoration: underline;
+    }
+    .appstore-button {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .appstore-logo {
+      width: 120px;
+      height: auto;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      filter: grayscale(100%);
+      opacity: 0.6;
+    }
+    .appstore-logo:hover {
+      filter: none;
+      opacity: 1;
+    }
+    .below-logo-text {
+      font-size: 1.1em;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
     }
   </style>
 </head>
 <body>
+  <div class="top-bar"></div>
 
-  <!-- لوجو البتكوين -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" />
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-  <!-- لوجو App Store -->
-  <a href="#"><img class="store-logo" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
+  <div class="dropdown" id="dropdownMenu">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <!-- النص الوصفي -->
-  <div class="description">
+  <h1>Welcome Bitcoin Wallet</h1>
+  <p>Take full control of your Bitcoin and Lightning funds with our secure wallet, trusted worldwide.</p>
+
+  <div class="appstore-button" title="Download on the App Store">
+    <img
+      class="appstore-logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_(iOS).svg"
+      alt="App Store"
+    />
+  </div>
+
+  <div class="below-logo-text">
     Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
   </div>
 
-  <!-- الشريط البرتقالي -->
-  <div class="orange-bar"></div>
-
-  <!-- روابط التنقل -->
-  <div class="bottom-nav">
-    <a href="index.html">Home</a>
+  <div class="bottom-bar">
     <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms</a>
-    <a href="contact.html">Contact Us</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="contact.html">Contact</a>
   </div>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+    window.onclick = function(event) {
+      const menu = document.getElementById("dropdownMenu");
+      if (!event.target.matches('.menu-toggle')) {
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        }
+      }
+    }
+  </script>
 </body>
 </html>
