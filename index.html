@@ -8,51 +8,40 @@
     body {
       font-family: sans-serif;
       max-width: 800px;
-      margin: auto;
+      margin: 30px auto 140px auto; /* مساحة من تحت عشان ما يغطي الشريط */
       padding: 20px;
       text-align: center;
+      position: relative;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+    img {
+      max-width: 200px;
+      margin-bottom: 20px;
     }
 
-    .logo {
-      width: 130px;
-      margin-top: 40px;
+    .store-logo {
+      margin-top: 10px;
+      width: 180px;
+      height: auto;
       cursor: pointer;
     }
 
-    .app-text {
-      margin-top: 25px; /* زيادة المسافة عن اللوجو */
+    .description {
+      margin-top: 40px; /* زادت المسافة تحت اللوجو */
       font-size: 18px;
-      font-weight: bold;
-    }
-
-    .store-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .store-buttons img {
-      height: 60px;
-      cursor: pointer;
+      color: #333;
     }
 
     /* الشريط البرتقالي */
     .orange-bar {
       width: 100%;
-      height: 120px; /* نفس ارتفاع صفحة Privacy */
+      height: 120px; /* نفس ارتفاع صفحة privacy */
       background-color: orange;
-      margin-top: 50px;
+      margin-top: 40px;
       border-radius: 4px;
     }
 
-    /* شريط التنقل السفلي */
+    /* روابط التنقل الثابتة */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -81,21 +70,21 @@
 </head>
 <body>
 
-  <a href="index.html">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" class="logo" />
-  </a>
+  <!-- لوجو البتكوين -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" />
 
-  <div class="app-text">Secure and Simple Bitcoin Wallet for Everyone</div>
+  <!-- لوجو App Store -->
+  <a href="#"><img class="store-logo" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
 
-  <div class="store-buttons">
-    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" /></a>
-    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" /></a>
+  <!-- النص الوصفي -->
+  <div class="description">
+    Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
   </div>
 
   <!-- الشريط البرتقالي -->
   <div class="orange-bar"></div>
 
-  <!-- شريط الروابط -->
+  <!-- روابط التنقل -->
   <div class="bottom-nav">
     <a href="index.html">Home</a>
     <a href="privacy.html">Privacy Policy</a>
