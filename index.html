@@ -15,19 +15,18 @@
       min-height: 100vh;
       box-sizing: border-box;
     }
-    /* الشريط البرتقالي أسفل الصفحة - نفس حجم ولون صفحة الخصوصية */
+    /* الشريط البرتقالي تحت المحتوى - مطابق لصفحة الخصوصية */
     .top-bar {
-      position: fixed;
-      bottom: 40px; /* فوق الشريط الأسود */
-      left: 0;
-      width: 100%;          /* عرض كامل */
-      height: 120px;        /* نفس ارتفاع صفحة الخصوصية */
+      width: 100%;
+      height: 120px; /* نفس ارتفاع صفحة الخصوصية */
       background-color: orange; /* لون برتقالي مطابق */
-      border-radius: 4px;   /* نفس الانحناءات */
-      z-index: 1000;
+      margin-top: 40px;
+      border-radius: 4px; /* نفس الانحناءات */
+      position: relative; /* مش ثابت، تحت المحتوى */
+      z-index: 0;
     }
 
-    /* الشريط الأسود الأسفل */
+    /* الشريط الأسود ثابت أسفل الشاشة */
     .bottom-bar {
       position: fixed;
       bottom: 0;
@@ -36,12 +35,15 @@
       background-color: #000;
       color: #fff;
       z-index: 1000;
-      padding: 10px 0;
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 15px;
     }
     .bottom-bar a {
       color: #fff;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
     }
     .bottom-bar a:hover {
@@ -117,16 +119,6 @@
   </style>
 </head>
 <body>
-  <div class="top-bar"></div>
-
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-  <div class="dropdown" id="dropdownMenu">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms and Conditions</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
   <h1>Welcome Bitcoin Wallet</h1>
   <p>Take full control of your Bitcoin and Lightning funds with our secure wallet, trusted worldwide.</p>
 
@@ -142,7 +134,18 @@
     Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
   </div>
 
+  <!-- الشريط البرتقالي تحت المحتوى -->
+  <div class="top-bar"></div>
+
+  <!-- روابط التنقل السفلي ثابتة -->
   <div class="bottom-bar">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="dropdown" id="dropdownMenu">
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms and Conditions</a>
     <a href="contact.html">Contact</a>
