@@ -8,156 +8,100 @@
     body {
       font-family: sans-serif;
       max-width: 800px;
-      margin: 80px auto 130px auto; /* مساحة للروابط */
+      margin: auto;
       padding: 20px;
       text-align: center;
-      position: relative;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-    /* الشريط البرتقالي عادي مع الصفحة */
-    .top-bar {
-      width: 100%;
-      height: 60px;
-      background-color: #ff6600; /* برتقالي */
-      margin-top: 40px; /* مسافة من المحتوى */
-      border-radius: 5px;
     }
 
-    /* الشريط الأسود الأسفل */
-    .bottom-bar {
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      width: 130px;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+
+    .app-text {
+      margin-top: 25px; /* زيادة المسافة عن اللوجو */
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .store-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .store-buttons img {
+      height: 60px;
+      cursor: pointer;
+    }
+
+    /* الشريط البرتقالي */
+    .orange-bar {
+      width: 100%;
+      height: 120px; /* نفس ارتفاع صفحة Privacy */
+      background-color: orange;
+      margin-top: 50px;
+      border-radius: 4px;
+    }
+
+    /* شريط التنقل السفلي */
+    .bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #000;
-      color: #fff;
+      background: #000;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      gap: 30px;
+      font-size: 15px;
       z-index: 1000;
-      padding: 10px 0;
-    }
-    .bottom-bar a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    .bottom-bar a:hover {
-      text-decoration: underline;
     }
 
-    h1 {
-      margin-bottom: 10px;
-      font-size: 2.5em;
-    }
-    p {
-      color: #666;
-      font-size: 1.1em;
-      margin-bottom: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .menu-toggle {
-      position: fixed;
-      top: 10px;
-      right: 20px;
-      font-size: 28px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      z-index: 1100;
-    }
-    .dropdown {
-      display: none;
-      position: fixed;
-      top: 50px;
-      right: 20px;
-      background: #000;
-      color: #fff;
-      border-radius: 5px;
-      padding: 10px;
-      text-align: left;
-      z-index: 1100;
-    }
-    .dropdown a {
-      display: block;
-      color: #fff;
+    .bottom-nav a {
+      color: white;
       text-decoration: none;
-      padding: 8px 0;
+      font-weight: bold;
     }
-    .dropdown a:hover {
+
+    .bottom-nav a:hover {
       text-decoration: underline;
-    }
-    .appstore-button {
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .appstore-logo {
-      width: 120px;
-      height: auto;
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-      filter: grayscale(100%);
-      opacity: 0.6;
-    }
-    .appstore-logo:hover {
-      filter: none;
-      opacity: 1;
-    }
-    .below-logo-text {
-      font-size: 1.1em;
-      color: #444;
-      max-width: 600px;
-      margin: 40px auto 30px auto; /* مسافة أكبر فوق النص */
     }
   </style>
 </head>
 <body>
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-  <div class="dropdown" id="dropdownMenu">
+  <a href="index.html">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" class="logo" />
+  </a>
+
+  <div class="app-text">Secure and Simple Bitcoin Wallet for Everyone</div>
+
+  <div class="store-buttons">
+    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" /></a>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" /></a>
+  </div>
+
+  <!-- الشريط البرتقالي -->
+  <div class="orange-bar"></div>
+
+  <!-- شريط الروابط -->
+  <div class="bottom-nav">
+    <a href="index.html">Home</a>
     <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms and Conditions</a>
-    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="contact.html">Contact Us</a>
   </div>
 
-  <h1>Welcome Bitcoin Wallet</h1>
-  <p>Take full control of your Bitcoin and Lightning funds with our secure wallet, trusted worldwide.</p>
-
-  <div class="appstore-button" title="Download on the App Store">
-    <img
-      class="appstore-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_(iOS).svg"
-      alt="App Store"
-    />
-  </div>
-
-  <div class="below-logo-text">
-    Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
-  </div>
-
-  <div class="top-bar"></div>
-
-  <div class="bottom-bar">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms and Conditions</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("dropdownMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-    window.onclick = function(event) {
-      const menu = document.getElementById("dropdownMenu");
-      if (!event.target.matches('.menu-toggle')) {
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        }
-      }
-    }
-  </script>
 </body>
 </html>
