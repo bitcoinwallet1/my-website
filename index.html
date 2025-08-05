@@ -8,25 +8,24 @@
     body {
       font-family: sans-serif;
       max-width: 800px;
-      margin: 80px auto 150px auto; /* زيادة الهامش الأسفل عشان الشريطين */
+      margin: 80px auto 150px auto;
       padding: 20px;
       text-align: center;
       position: relative;
       min-height: 100vh;
       box-sizing: border-box;
     }
-    /* الشريط البرتقالي تحت المحتوى - مطابق لصفحة الخصوصية */
+
     .top-bar {
       width: 100%;
-      height: 120px; /* نفس ارتفاع صفحة الخصوصية */
-      background-color: orange; /* لون برتقالي مطابق */
+      height: 120px;
+      background-color: orange;
       margin-top: 40px;
-      border-radius: 4px; /* نفس الانحناءات */
-      position: relative; /* مش ثابت، تحت المحتوى */
+      border-radius: 4px;
+      position: relative;
       z-index: 0;
     }
 
-    /* الشريط الأسود ثابت أسفل الشاشة */
     .bottom-bar {
       position: fixed;
       bottom: 0;
@@ -62,6 +61,7 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     .menu-toggle {
       position: fixed;
       top: 10px;
@@ -93,6 +93,7 @@
     .dropdown a:hover {
       text-decoration: underline;
     }
+
     .appstore-button {
       display: inline-block;
       margin-bottom: 10px;
@@ -110,11 +111,35 @@
       filter: none;
       opacity: 1;
     }
+
     .below-logo-text {
       font-size: 1.1em;
       color: #444;
       max-width: 600px;
       margin: 0 auto 30px auto;
+    }
+
+    /* تنسيق النصوص الثلاثة بشكل عمودي */
+    .features-section {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .feature-block {
+      max-width: 600px;
+      text-align: center;
+    }
+    .feature-block h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .feature-block p {
+      color: #555;
+      font-size: 1.05em;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -134,10 +159,26 @@
     Securely send, receive, and store Bitcoin with our intuitive and powerful wallet.
   </div>
 
-  <!-- الشريط البرتقالي تحت المحتوى -->
+  <!-- النصوص الثلاثة بشكل عمودي -->
+  <div class="features-section">
+    <div class="feature-block">
+      <h3>Simple & Smart</h3>
+      <p>A lightweight Bitcoin wallet that gets you started in seconds — no complexity, just clarity.</p>
+    </div>
+    <div class="feature-block">
+      <h3>Effortless to Use</h3>
+      <p>Clean, intuitive design for beginners and experts alike. Everything where you need it.</p>
+    </div>
+    <div class="feature-block">
+      <h3>Secure & In Control</h3>
+      <p>Self-custodial and private — your assets stay safe, and you're always in charge.</p>
+    </div>
+  </div>
+
+  <!-- الشريط البرتقالي -->
   <div class="top-bar"></div>
 
-  <!-- روابط التنقل السفلي ثابتة -->
+  <!-- الشريط السفلي -->
   <div class="bottom-bar">
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms and Conditions</a>
