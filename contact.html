@@ -99,6 +99,43 @@
     .bottom-nav a:hover {
       text-decoration: underline;
     }
+
+    /* أيقونة القائمة الثلاثية */
+    .menu-toggle {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1100;
+    }
+
+    /* القائمة المنسدلة */
+    .dropdown {
+      display: none;
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background: #000;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+      z-index: 1100;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 0;
+    }
+
+    .dropdown a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -126,11 +163,6 @@
   <!-- شريط برتقالي مطابق للرئيسية -->
   <div class="orange-bar"></div>
 
-  <!-- حقوق النشر -->
-  <p style="text-align:center; margin-top: 60px; font-size: 14px; color: #666;">
-    © 2025 Satguards - All Rights Reserved
-  </p>
-
   <!-- روابط تنقل سفلية -->
   <div class="bottom-nav">
     <a href="index.html">Home</a>
@@ -138,6 +170,36 @@
     <a href="terms.html">Terms and Conditions</a>
     <a href="contact.html">Contact</a>
   </div>
+
+  <!-- أيقونة القائمة الثلاثية -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="dropdown" id="dropdownMenu">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- حقوق النشر -->
+  <p style="text-align:center; margin-top: 60px; font-size: 14px; color: #666;">
+    © 2025 Satguards - All Rights Reserved
+  </p>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      const menu = document.getElementById("dropdownMenu");
+      if (!event.target.matches('.menu-toggle')) {
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
